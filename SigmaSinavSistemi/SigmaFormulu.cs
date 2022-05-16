@@ -41,10 +41,13 @@ namespace SigmaSinavSistemi
             connect.Close();
             return formul;  
         }
-        public void TarihGuncelle()
+
+        
+        public void TarihGuncelle(int soruID)
         {
+            DateTime now = DateTime.Now;
             connect.Open();
-            komut = new SqlCommand("UPDATE Sorular SET CozduguTarih = CURDATE()", connect);
+            komut = new SqlCommand("UPDATE Sorular SET CozduguTarih = CAST(GETDATE() AS DATE) , kacDefaBildi = kacDefaBildi+1 Where soru_id= '" + soruID+"'", connect);
             komut.ExecuteNonQuery();
             connect.Close();
         }

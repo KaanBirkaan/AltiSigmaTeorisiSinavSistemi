@@ -31,7 +31,7 @@ namespace SigmaSinavSistemi
             DataSet ds = new DataSet();
             da.Fill(ds);
             connect.Close();
-            return ds;
+            return ds; //geri donus saglandi
         }
 
 
