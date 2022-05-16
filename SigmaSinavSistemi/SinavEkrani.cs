@@ -54,7 +54,7 @@ namespace SigmaSinavSistemi
             string cevap3 = ds.Tables[0].Rows[0]["cevap3"].ToString();
             string soruFotosu = ds.Tables[0].Rows[0]["yol"].ToString();
                cektiginSorununID = int.Parse(ds.Tables[0].Rows[0]["soru_id"].ToString());
-            MessageBox.Show("BEN BUNU ÇEKERİM YA"+cektiginSorununID);
+           
             lbl_sorusayi.Text = "SORU" + " " + (ekrandakiSoruID);
 
 
