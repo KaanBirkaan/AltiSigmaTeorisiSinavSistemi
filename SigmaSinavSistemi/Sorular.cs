@@ -36,7 +36,7 @@ namespace SigmaSinavSistemi
         public DataSet SorulariCek2(int id)
         {
             connect.Open();
-            string sorgu = "Select Top " + sorusayisi + " * From Sorular where kacDefaBildi = '0' Order By NewID() ";
+            string sorgu = "Select Top " + sorusayisi + " * From Sorular where kacDefaBildi > 0 AND CikicakTarih <= GuncelTarih  Order By NewID() ";
             SqlDataAdapter da = new SqlDataAdapter(sorgu, connect);
             DataSet ds = new DataSet();
             da.Fill(ds);

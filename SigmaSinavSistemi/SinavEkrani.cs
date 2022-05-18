@@ -112,6 +112,8 @@ namespace SigmaSinavSistemi
             if (ekrandakiSoruID == 11)
             {
                 MessageBox.Show("sınavınız bitmiştir");
+                hakkiilebildiğisorular h = new hakkiilebildiğisorular();
+                h.ShowDialog();
             }
             else
             {
@@ -146,5 +148,7 @@ namespace SigmaSinavSistemi
         {
             timer1.Stop();
         }
+
+        
     }
 }

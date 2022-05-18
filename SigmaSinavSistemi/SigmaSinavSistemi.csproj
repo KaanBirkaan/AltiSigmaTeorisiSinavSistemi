@@ -53,6 +53,12 @@
       <DependentUpon>AdminEkrani.cs</DependentUpon>
     </Compile>
     <Compile Include="Girisformu.cs" />
+    <Compile Include="hakkiilebildiğisorular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hakkiilebildiğisorular.Designer.cs">
+      <DependentUpon>hakkiilebildiğisorular.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kayit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     <Compile Include="Sorular.cs" />
     <EmbeddedResource Include="AdminEkrani.resx">
       <DependentUpon>AdminEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hakkiilebildiğisorular.resx">
+      <DependentUpon>hakkiilebildiğisorular.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kayit.resx">
       <DependentUpon>Kayit.cs</DependentUpon>

@@ -99,25 +99,17 @@ namespace SigmaSinavSistemi
             connect.Close();
             
         }
-        public int[] kacDefaBildif()
+        public void Yanliscevap(int soruID)
         {
-            int adet = 0;
             connect.Open();
-            SqlCommand guncelle = new SqlCommand("SELECT COUNT(*) FROM Sorular WHERE kacDefaBildi > 0 AND CozduguTarih >= CikicakTarih ", connect);
-            adet = (int)guncelle.ExecuteScalar();
-            int[] kacdefabildi = new int[adet];
-            
-            komut = new SqlCommand("SELECT soru_id FROM Sorular WHERE kacDefaBildi > 0 AND CozduguTarih >= CikicakTarih ", connect);
-            SqlDataReader oku = komut.ExecuteReader();
-            int i = 0;
-            while (oku.Read())
-            {
-                kacdefabildi[i] = int.Parse(oku[0].ToString());
-                i++;
-            }
+            komut = new SqlCommand("UPDATE Sorular SET kacDefaBildi = 0, CikicakTarih = GETDATE() WHERE soru_id = '" + soruID + "'", connect);
+           
+            komut.ExecuteNonQuery();
             connect.Close();
-            return kacdefabildi;
         }
+
+
+
 
     }
 }
