@@ -22,6 +22,8 @@ namespace SigmaSinavSistemi
         string dogruCevap;
         int cektiginSorununID;
         DataSet ds;
+        int kacdefabildi;
+       
         public SinavEkrani()
         {
             InitializeComponent();
@@ -54,7 +56,8 @@ namespace SigmaSinavSistemi
             string cevap3 = ds.Tables[0].Rows[0]["cevap3"].ToString();
             string soruFotosu = ds.Tables[0].Rows[0]["yol"].ToString();
                cektiginSorununID = int.Parse(ds.Tables[0].Rows[0]["soru_id"].ToString());
-           
+            kacdefabildi = int.Parse(ds.Tables[0].Rows[0]["kacDefaBildi"].ToString());
+
             lbl_sorusayi.Text = "SORU" + " " + (ekrandakiSoruID);
 
 
@@ -70,39 +73,39 @@ namespace SigmaSinavSistemi
 
         private void button1_Click(object sender, EventArgs e)
         {
-            connect.Open();
-
-            string cevapguncelleme = ("Update Sorular Set kacDefaBildi=@kacDefaBildi, CozduguTarih=@CozduguTarih , CikicakTarih=@CikicakTarih where soru_id=@soru_id");
-
+            
+            
             SigmaFormulu formulAta = new SigmaFormulu();
-            formulAta.TarihGuncelle(cektiginSorununID);
-            SqlCommand komut = new SqlCommand(cevapguncelleme, connect);
-
+            SigmaFormulu formul2 = new SigmaFormulu();
+            
+            
             RadioButton rb = null;
 
             if (radbtn_a.Checked == true)
             {
                 rb = radbtn_a;
+                
             }
             else if (radbtn_b.Checked == true)
             {
                 rb = radbtn_b;
+                
             }
             else if (radbtn_c.Checked == true)
             {
                 rb = radbtn_c;
+               
             }
             else if (radbtn_d.Checked == true)
             {
                 rb = radbtn_d;
-
-
+                formulAta.TarihGuncelle(cektiginSorununID);
+                formul2.GelecekTarihiguncelle(cektiginSorununID);
             }
 
             if (rb.Text == dogruCevap)
             {
-                MessageBox.Show("Doğru cevap verdiniz");
-
+                
             }
 
             ekrandakiSoruID++;
@@ -113,12 +116,9 @@ namespace SigmaSinavSistemi
             else
             {
                 SoruyuEkranaIsle(ekrandakiSoruID);
+               
             }
            
-           
-            connect.Close();
-
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
