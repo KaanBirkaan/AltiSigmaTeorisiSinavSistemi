@@ -29,22 +29,11 @@ namespace SigmaSinavSistemi
         /// </summary>
         private void InitializeComponent()
         {
-            this.bttn_ayarlar = new System.Windows.Forms.Button();
             this.ogrhos_lbl = new System.Windows.Forms.Label();
             this.hoslbl = new System.Windows.Forms.Label();
             this.bttn_snvgir = new System.Windows.Forms.Button();
             this.lbl_Tarih = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // bttn_ayarlar
-            // 
-            this.bttn_ayarlar.Location = new System.Drawing.Point(12, 153);
-            this.bttn_ayarlar.Name = "bttn_ayarlar";
-            this.bttn_ayarlar.Size = new System.Drawing.Size(132, 51);
-            this.bttn_ayarlar.TabIndex = 0;
-            this.bttn_ayarlar.Text = "Ayarlar";
-            this.bttn_ayarlar.UseVisualStyleBackColor = true;
-            this.bttn_ayarlar.Click += new System.EventHandler(this.bttn_ayarlar_Click);
             // 
             // ogrhos_lbl
             // 
@@ -78,7 +67,7 @@ namespace SigmaSinavSistemi
             // lbl_Tarih
             // 
             this.lbl_Tarih.AutoSize = true;
-            this.lbl_Tarih.Location = new System.Drawing.Point(12, 416);
+            this.lbl_Tarih.Location = new System.Drawing.Point(201, 20);
             this.lbl_Tarih.Name = "lbl_Tarih";
             this.lbl_Tarih.Size = new System.Drawing.Size(35, 13);
             this.lbl_Tarih.TabIndex = 4;
@@ -88,12 +77,11 @@ namespace SigmaSinavSistemi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 453);
+            this.ClientSize = new System.Drawing.Size(315, 331);
             this.Controls.Add(this.lbl_Tarih);
             this.Controls.Add(this.bttn_snvgir);
             this.Controls.Add(this.hoslbl);
             this.Controls.Add(this.ogrhos_lbl);
-            this.Controls.Add(this.bttn_ayarlar);
             this.Name = "OgrenciEkrani";
             this.Text = "OgrenciEkrani";
             this.Load += new System.EventHandler(this.OgrenciEkrani_Load);
@@ -103,8 +91,6 @@ namespace SigmaSinavSistemi
         }
 
         #endregion
-
-        private System.Windows.Forms.Button bttn_ayarlar;
         private System.Windows.Forms.Label ogrhos_lbl;
         private System.Windows.Forms.Label hoslbl;
         private System.Windows.Forms.Button bttn_snvgir;
